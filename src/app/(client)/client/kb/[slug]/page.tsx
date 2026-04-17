@@ -4,7 +4,8 @@ import { getArticle } from "@/lib/actions/kb";
 import { KBArticleClient } from "./KBArticleClient";
 import { notFound, redirect } from "next/navigation";
 
-export default async function ClientArticlePage({ params }: { params: { slug: string } }) {
+export default async function ClientArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const session = await auth();
   if (!session?.user?.id) {
     redirect("/login");
@@ -25,7 +26,7 @@ export default async function ClientArticlePage({ params }: { params: { slug: st
     notFound();
   }
 
-  const article = await getArticle(params.slug, org.slug);
+  const article = await getArticle(slug, org.slug);
 
   if (!article) {
     notFound();

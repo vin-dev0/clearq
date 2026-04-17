@@ -5,10 +5,12 @@ import { revalidatePath } from "next/cache";
 
 export async function PATCH(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const session = await auth();
+
     const orgId = (session?.user as any)?.organizationId;
 
     if (!orgId) {
@@ -20,7 +22,7 @@ export async function PATCH(
 
     const ticket = await prisma.ticket.update({
       where: {
-        id: params.id,
+        id: id,
         organizationId: orgId,
       },
       data: {
@@ -32,7 +34,7 @@ export async function PATCH(
     });
 
     revalidatePath("/tickets");
-    revalidatePath(`/tickets/${params.id}`);
+    revalidatePath(`/tickets/${id}`);
 
     return NextResponse.json(ticket);
   } catch (error: any) {

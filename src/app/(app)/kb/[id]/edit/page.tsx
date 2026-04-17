@@ -4,14 +4,15 @@ import { getAdminArticleById, getAdminCategories } from "@/lib/actions/kb";
 import { ArticleEditor } from "../../ArticleEditor";
 import { notFound } from "next/navigation";
 
-export default async function EditArticlePage({ params }: { params: { id: string } }) {
+export default async function EditArticlePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const session = await auth();
   if (!session?.user?.id) {
     redirect("/login");
   }
 
   const [article, categories] = await Promise.all([
-    getAdminArticleById(params.id),
+    getAdminArticleById(id),
     getAdminCategories()
   ]);
 
