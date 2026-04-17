@@ -1,0 +1,47 @@
+
+> ticketsystem@0.1.1 dev
+> npx concurrently "next dev" "npx tsx rdp-bridge.ts"
+
+[0] ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+[0] ▲ Next.js 16.2.3 (Turbopack)
+[0] - Local:         http://localhost:3001
+[0] - Network:       http://10.255.255.254:3001
+[0] - Environments: .env.local, .env
+[0] ✓ Ready in 658ms
+[1] node:events:486
+[1]       throw er; // Unhandled 'error' event
+[1]       ^
+[1] 
+[1] Error: listen EADDRINUSE: address already in use :::3003
+[1]     at Server.setupListenHandle [as _listen2] (node:net:1948:16)
+[1]     at listenInCluster (node:net:2005:12)
+[1]     at Server.listen (node:net:2110:7)
+[1]     at <anonymous> (/home/subzero/Projects/simplyticket/rdp-bridge.ts:100:12)
+[1]     at Object.<anonymous> (/home/subzero/Projects/simplyticket/rdp-bridge.ts:102:2)
+[1]     at Module._compile (node:internal/modules/cjs/loader:1812:14)
+[1]     at Object.transformer (/home/subzero/Projects/simplyticket/node_modules/tsx/dist/register-D46fvsV_.cjs:3:1104)
+[1]     at Module.load (node:internal/modules/cjs/loader:1533:32)
+[1]     at Module._load (node:internal/modules/cjs/loader:1335:12)
+[1]     at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+[1] Emitted 'error' event on Server instance at:
+[1]     at emitErrorNT (node:net:1984:8)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]   code: 'EADDRINUSE',
+[1]   errno: -98,
+[1]   syscall: 'listen',
+[1]   address: '::',
+[1]   port: 3003
+[1] }
+[1] 
+[1] Node.js v24.14.0
+[1] npx tsx rdp-bridge.ts exited with code 1
+[0] ⨯ Another next dev server is already running.
+[0] 
+[0] - Local:        http://localhost:3000
+[0] - PID:          27919
+[0] - Dir:          /home/subzero/Projects/simplyticket
+[0] - Log:          .next/dev/logs/next-development.log
+[0] 
+[0] Run kill 27919 to stop it.
+[0] [?25h
+[0] next dev exited with code 1

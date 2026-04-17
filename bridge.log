@@ -1,0 +1,18 @@
+[RDP Bridge] Running on port 3003
+[RDP Bridge] Browser client connected: CSA-yTH0NvxUFWSzAAAB
+[RDP Bridge] Authenticating to: 192.168.1.154
+{"name":"node-rdpjs","hostname":"DESKTOP-NDHOBAA","pid":24316,"level":40,"msg":"NODE_RDP_PROTOCOL_X224_NEG_FAILURE(Failure code:5 (see https://msdn.microsoft.com/en-us/library/cc240507.aspx))\nError: Failure code:5 (see https://msdn.microsoft.com/en-us/library/cc240507.aspx)\n    at new ProtocolError (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/core/error.js:40:8)\n    at Client.recvConnectionConfirm (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/x224.js:221:9)\n    at TPKT.<anonymous> (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/x224.js:202:8)\n    at Object.onceWrapper (node:events:623:26)\n    at TPKT.emit (node:events:508:28)\n    at TPKT.recvData (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/tpkt.js:110:7)\n    at BufferLayer.<anonymous> (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/tpkt.js:101:8)\n    at Object.onceWrapper (node:events:623:26)\n    at BufferLayer.emit (node:events:508:28)\n    at BufferLayer.recv (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/core/layer.js:91:8)","time":"2026-04-12T11:27:52.660Z","v":0}
+[RDP Bridge] RDP Error: ProtocolError: Failure code:5 (see https://msdn.microsoft.com/en-us/library/cc240507.aspx)
+    at new ProtocolError (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/core/error.js:40:8)
+    at Client.recvConnectionConfirm (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/x224.js:221:9)
+    at TPKT.<anonymous> (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/x224.js:202:8)
+    at Object.onceWrapper (node:events:623:26)
+    at TPKT.emit (node:events:508:28)
+    at TPKT.recvData (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/tpkt.js:110:7)
+    at BufferLayer.<anonymous> (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/protocol/tpkt.js:101:8)
+    at Object.onceWrapper (node:events:623:26)
+    at BufferLayer.emit (node:events:508:28)
+    at BufferLayer.recv (/home/subzero/Projects/simplyticket/node_modules/node-rdpjs-2/lib/core/layer.js:91:8) {
+  code: 'NODE_RDP_PROTOCOL_X224_NEG_FAILURE'
+}
+[RDP Bridge] RDP connection closed
